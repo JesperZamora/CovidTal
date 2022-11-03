@@ -52,7 +52,6 @@ public class CovidData implements Comparable<CovidData>{
         return String.format("""
                 Region: %-15s Aldersgruppe: %-8s Bekræftet tilfælde: %-6d Døde: %-6d Indlagte intensiv: %-5d Indlagte: %-8s Dato: %-6s""",
                 region, aldersgruppe, bekræftetTilfælde, døde, indlagteIntensiv, indlagte, dato );
-
     }
 
     @Override

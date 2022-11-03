@@ -28,4 +28,10 @@ public class Controller {
         fileHandler.saveToFile();
     }
 
+    public void addCovidInfo(String region, String aldersgruppe, int bekræftetTilfælde, int døde,
+                                                int indlagteIntensiv, int indlagte, String dato) {
+
+        fileHandler.addCovidInfo(region, aldersgruppe, bekræftetTilfælde, døde,
+                                                indlagteIntensiv, indlagte, dato);
+    }
 }

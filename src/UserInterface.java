@@ -18,6 +18,7 @@ public class UserInterface {
             3. Save file
             4. Sort by region
             5. Sort by age group
+            6. Add new covid info
             9. Exit""");
     }
 
@@ -31,6 +32,7 @@ public class UserInterface {
                 case 3 -> saveToFile();
                 case 4 -> sortByRegion();
                 case 5 -> sortAgeGroup();
+                case 6 -> addInformation();
                 case 9 -> isRunning = false;
                 default -> System.out.println("Invalid number!\n");
             }
@@ -91,6 +93,39 @@ public class UserInterface {
         return sc.nextInt();
     }
 
+    public String readString() { // for at undgå scannerbug
+        String input = sc.next();
+        sc.nextLine();
+        return input;
+    }
+
+    public void addInformation() {
+        System.out.println("Add new Covid-19 information:");
+        System.out.print("Region: ");
+        String region = readString();
+
+        System.out.print("Aldersgruppe: ");
+        String ageG = readString();
+
+        System.out.print("Bekræftet tilfælde: ");
+        int confirmedIncident = readInteger();
+
+        System.out.print("Døde: ");
+        int deaths = readInteger();
+
+        System.out.print("Indlagte intensiv: ");
+        int intensiveCare = readInteger();
+
+        System.out.print("Indlagte: ");
+        int hospitalized = readInteger();
+
+        System.out.print("Dato: ");
+        String date = readString();
+
+        controller.addCovidInfo(region, ageG, confirmedIncident, deaths, intensiveCare, hospitalized, date);
+        System.out.println("New data added!");
+        System.out.println();
+    }
 }
 
 /*    public int getIntegerFromUser() {

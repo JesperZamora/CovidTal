@@ -8,6 +8,14 @@ public class FileHandler {
     private ArrayList<CovidData> covidData = new ArrayList<>();
     private File file = new File("src/data/11_noegletal_pr_region_pr_aldersgruppe1.csv");
 
+    public void addCovidInfo(String region, String aldersgruppe, int bekræftetTilfælde, int døde,
+                             int indlagteIntensiv, int indlagte, String dato) {
+
+        CovidData newData = new CovidData(region, aldersgruppe, bekræftetTilfælde, døde,
+        indlagteIntensiv, indlagte, dato);
+        covidData.add(newData);
+    }
+
     public void saveToFile() {
         try {
             PrintStream output = new PrintStream(file);
